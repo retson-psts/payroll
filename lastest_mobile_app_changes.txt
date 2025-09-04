@@ -1,4 +1,0 @@
-10-07-2024 : 
--To create Apicontroller to use methods
--if not working in postman use clear cookies
--Added two colunms in users table for token save.
