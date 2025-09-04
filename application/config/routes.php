@@ -40,6 +40,8 @@
 $route['default_controller'] = "home";
 $route['employee_profile/(:num)'] = "employee_profile/index/$1";
 $route['locations/(:num)'] = "locations/index/$1";
+$route['translate_uri_dashes'] = FALSE;
+$route['404_override'] = '';
 
 
 /* End of file routes.php */

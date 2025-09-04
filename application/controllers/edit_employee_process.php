@@ -12,18 +12,18 @@ class Edit_employee_process extends CI_Controller {
 	    //step 1
 		//echo $id;
 			
-		$this->form_validation->set_rules('emp_number', 'Employee Number / ID', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('emp_firstname', 'First name', 'trim|required|xss_clean|alpha');
-		$this->form_validation->set_rules('emp_lastname', 'Last Name', 'trim|required|xss_clean|alpha');
-		$this->form_validation->set_rules('emp_middle_name', 'Middle Name', 'trim|xss_clean');
+		$this->form_validation->set_rules('emp_number', 'Employee Number / ID', 'trim|required');
+		$this->form_validation->set_rules('emp_firstname', 'First name', 'trim|required|alpha');
+		$this->form_validation->set_rules('emp_lastname', 'Last Name', 'trim|required|alpha');
+		$this->form_validation->set_rules('emp_middle_name', 'Middle Name', 'trim');
 		$this->form_validation->set_rules('emp_dri_lice_exp', 'Employee Licence Expiry Date', 'xss_clean');
-		$this->form_validation->set_rules('emp_other_id', 'Other ID', 'trim|xss_clean');
-		$this->form_validation->set_rules('emp_gender', 'Gender', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('nation_code', 'Nationality', 'trim|xss_clean');
-		$this->form_validation->set_rules('emp_birthday', 'Date of Birth', 'required|xss_clean');
-		$this->form_validation->set_rules('emp_dri_lice_num', 'Driving Liscence', 'trim|xss_clean');
+		$this->form_validation->set_rules('emp_other_id', 'Other ID', 'trim');
+		$this->form_validation->set_rules('emp_gender', 'Gender', 'trim|required');
+		$this->form_validation->set_rules('nation_code', 'Nationality', 'trim');
+		$this->form_validation->set_rules('emp_birthday', 'Date of Birth', 'required');
+		$this->form_validation->set_rules('emp_dri_lice_num', 'Driving Liscence', 'trim');
 		$this->form_validation->set_rules('emp_dri_lice_exp_date', 'Liscence Expiry Date', 'xss_clean');
-		$this->form_validation->set_rules('emp_marital_status', 'Marital Status', 'trim|xss_clean');
+		$this->form_validation->set_rules('emp_marital_status', 'Marital Status', 'trim');
 		
 		
 		
@@ -54,8 +54,8 @@ class Edit_employee_process extends CI_Controller {
 			{
 				if($this->input->post('enable_login')=='1')
 				{
-					$this->form_validation->set_rules('username', 'Username', 'xss_clean|alpha_numeric|required|min_length[4]|max_length[20]');
-		$this->form_validation->set_rules('password', 'Password', 'xss_clean|alpha_numeric|required');
+					$this->form_validation->set_rules('username', 'Username', 'alpha_numeric|required|min_length[4]|max_length[20]');
+		$this->form_validation->set_rules('password', 'Password', 'alpha_numeric|required');
 					  $username=$this->input->post('username');
 					  $password=$this->input->post('password');
 					  if($this->form_validation->run()===false)

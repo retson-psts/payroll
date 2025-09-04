@@ -32,7 +32,7 @@ class Jobsheet extends CI_Controller {
 	{
 		
 		$user_id=$this->session->userdata['logged_in']['user_id'];
-		$this->form_validation->set_rules('jobsheet_date', 'Date Jobsheet', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('jobsheet_date', 'Date Jobsheet', 'trim|required');
 		if($this->form_validation->run()===false)
 		{
 			
@@ -73,7 +73,7 @@ class Jobsheet extends CI_Controller {
 					$data['date']=$date1['2'].'-'.$date1['1'].'-'.$date1['0'];
 					$data['dateold']=$this->input->post('jobsheet_date');
 					$data['total_list']=$this->fetch_jobsheet_leave($data['total_list1'],$data['dateold']);
-					//var_dump($data['total_list']);
+					
 					$data['leave_request_types']=$this->leave_lib->leave_request_types();
 					$data['pay_periods']=$this->job_model->pay_period();
 					$data['project_list']=$this->jobsheet_model->project_list();
@@ -109,7 +109,7 @@ class Jobsheet extends CI_Controller {
 	{
 		
 		
-		$this->form_validation->set_rules('id', 'id', 'trim|required|xss_clean|numeric');
+		$this->form_validation->set_rules('id', 'id', 'trim|required|numeric');
 		$id=$this->input->get('id');
 		$data['location_list']=$this->jobsheet_model->location_list($id);
 		$this->load->view('location_list_ajax',$data);
@@ -246,8 +246,9 @@ class Jobsheet extends CI_Controller {
 				$arrayjobsheet[]=array('employee_id'=>$value,'jobsheet_entered'=> $datetime,'jobsheet_date'=>$date1 ,'jobsheet_entered_by'=>$user_id ,'jobsheet_normalhour'=>0 ,'jobsheet_otfixed'=>0 ,'jobsheet_ot15'=>0 ,'jobsheet_ot2'=>0 ,'jobsheet_total'=>0 ,'jobsheet_absent'=>1 ,'jobsheet_notes'=>'','jobsheet_workhours'=>'','jobsheet_id'=>$jobsheet_id );	
 			}
 			else
-			{
-				$total=$data['normal_hours'][$value]+$data['ot15'][$value]+$data['ot2'][$value]+$data['otf'][$value];
+			{   
+				
+				$total=(float)$data['normal_hours'][$value]+(float)$data['ot15'][$value]+(float)$data['ot2'][$value]+(float)$data['otf'][$value];
 				$arrayjobsheet[]=array('employee_id'=>$value,'jobsheet_entered'=> $datetime,'jobsheet_date'=>$date1 ,'jobsheet_entered_by'=>$user_id ,'jobsheet_normalhour'=>$data['normal_hours'][$value] ,'jobsheet_otfixed'=>$data['otf'][$value] ,'jobsheet_ot15'=>$data['ot15'][$value] ,'jobsheet_ot2'=>$data['ot2'][$value] ,'jobsheet_total'=>$total ,'jobsheet_absent'=>0 ,'jobsheet_notes'=>$data['remarks'][$value],'jobsheet_workhours'=>$data['in-out'][$value],'jobsheet_id'=>$jobsheet_id );	
 			}
 			

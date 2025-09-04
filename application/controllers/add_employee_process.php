@@ -906,9 +906,9 @@ class Add_employee_process extends CI_Controller {
 	}
 	public function upload_attachment($employee_id='0')
 	{
-		$this->form_validation->set_rules('screen', 'Attachment Type', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('screen', 'Attachment Type', 'trim|required');
 		$this->form_validation->set_rules('attach_file', 'Employee Id', 'trim');
-		$this->form_validation->set_rules('attach_comment', 'Employee Id', 'trim|xss_clean');
+		$this->form_validation->set_rules('attach_comment', 'Employee Id', 'trim');
 		if($this->form_validation->run()!==false)
 		{
 			if($_FILES['attach_file']['name']!='')
@@ -950,7 +950,7 @@ class Add_employee_process extends CI_Controller {
 	public function add_photo()
 	{
 		$this->form_validation->set_rules('employee_photo', 'Employee Photo', 'strip_image_tags|trim');
-		$this->form_validation->set_rules('employee_id', 'Employee Id', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('employee_id', 'Employee Id', 'trim|required');
 		if($this->form_validation->run()!==false)
 		{
 			if($_FILES['employee_photo']['name']!='')

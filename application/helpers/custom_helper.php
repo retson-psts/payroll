@@ -189,3 +189,102 @@ if(!function_exists('per_day_hour'))
 	}
 	
 }
+
+
+if (!function_exists('encryptor')) {
+
+    function encryptor($action, $string)
+
+    {
+
+        $output = false;
+
+        
+
+        $encrypt_method = "AES-256-CBC";
+
+        //pls set your unique hashing key
+
+        $secret_key     = 'payroll';
+
+        $secret_iv      = 'My#payroll';
+
+        
+
+        // hash
+
+        $key = hash('sha256', $secret_key);
+
+        // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
+
+        $iv  = substr(hash('sha256', $secret_iv), 0, 16);
+
+        
+
+        //do the encyption given text/string/number
+
+        if ($action == 'encrypt') {
+
+            $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+
+            $output = base64_encode($output);
+
+        } else if ($action == 'decrypt') {
+
+            //decrypt the given text/string/number
+
+            $output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
+
+        }
+
+        
+
+        return $output;
+
+    }
+
+}
+
+if (!function_exists('returnResponse')) {
+    function returnResponse($status,$message,$data,$error_code,$code){
+                $msg=0;
+                // error type codes
+                $error_types=array("1"=>"Custom Error","2"=>"Framework error","3"=>"No Error");
+                $http_codes=array("200"=>200,"201"=>201,"400"=>400,"404"=>404,"401"=>401,"422"=>422);
+
+                if(!in_array($error_code,$error_types)){
+                    $msg=1;
+                }
+                if(!in_array($code,$http_codes)){
+                    $msg=1;
+            }
+            if($msg){
+            return json_encode([
+                    'status'    => $status,
+                    'message'   => $message,
+                    'data'  =>$data,
+                    'errorType' => $error_types[$error_code]
+                ],true);
+            }else{
+                return json_encode(['message'=>'Give Correct Response codes'],true);
+            }
+        }
+}
+if (!function_exists('convertDatetoepoch')) {
+    function convertDatetoepoch(){
+		$current_date = date('Y-m-d H:i:s');        
+        // Convert current date and time to epoch
+        $current_epoch = strtotime($current_date);  
+		return $current_epoch;    
+    }
+}
+if (!function_exists('checkcurrentuser')) {
+    function checkcurrentuser($user_id,$token){
+		$CI =& get_instance();
+        
+        // Load the model
+        $CI->load->model('common_model');
+	    $check_user_auth=$CI->common_model->__dublicate_check('users',array('user_id'=>$user_id,"mlogin_token"=>$token));
+		return $check_user_auth;    
+    }
+}

@@ -29,6 +29,7 @@
 	}
 	public function job_sheet_list_employee($id,$date)
 	{
+		
 	   $this->db->select('a.*,b.*,a.employee_id as emp_id');
 	   $this->db->from('employee as a');
 	   $this->db->join('employee_salary as b','a.employee_id = b.employee_id','LEFT');
@@ -36,8 +37,8 @@
 	    $this->db->join('employee_job_details as d','d.employee_id = b.employee_id');
 	  /* $this->db->join('employee_leave as c','a.employee_id = c.employee_id');*/
 	   /*$this->db->where('c.leave_date','2015-06-28');*/
-	  // $this->db->where('d.emp_job_start_date <=',$date);
-	  // $this->db->where('d.emp_job_end_date >=',$date);
+	   $this->db->where('d.emp_job_start_date <=',$date);
+	   $this->db->where('d.emp_job_end_date >=',$date);
 	   $this->db->where('a.employee_deleted','0');
 	   $this->db->where('c.user_id',$id);
 

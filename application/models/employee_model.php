@@ -138,6 +138,27 @@ Class Employee_model extends CI_Model
 		 return false;
 	   }
 	}
+
+	public function employee_details_using_user_id($user_id)
+	{
+	   $this->db->select('a.*,b.*,a.employee_id as emp_id,a.joined_date as join_date');
+	   $this->db->from('employee as a');
+	   $this->db->join('users as b','a.employee_id = b.employee_id','LEFT');
+	   $this->db->where('b.user_id',$user_id);
+	   $this->db->where('a.employee_deleted','0');
+	   $query = $this -> db -> get();
+	   //echo $this->db->last_query();
+	   if($query -> num_rows() == 1)
+	   {
+		 return $query->result_array();
+		 
+	   }
+	   else
+	   {
+		 return false;
+	   }
+	}
+
 	public function update_employee_common($data,$employee_id)
 	{
 		$this->db->trans_begin();
@@ -329,7 +350,7 @@ $query = $this->db->get();*/
 			return true;
 		}
 	}
-	public function add_employee_details($table='',$data='')
+	public function add_employee_details($table,$data)
 	{
 		 
 		
@@ -486,7 +507,7 @@ $query = $this->db->get();*/
 	
 	
 	
-	public function get_employe_details($table='',$id='')
+	public function get_employe_details($table,$id)
 	{
 		$this->db->select('*');
 		$this->db->from($table);

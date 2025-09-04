@@ -30,8 +30,8 @@ class Projects extends CI_Controller {
 	*/
 	public function add1(){
 		$user_id=$this->session->userdata['logged_in']['user_id'];
-		$this->form_validation->set_rules('project_title', 'Project Title', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('Project_description', 'Project Description', 'trim|xss_clean');
+		$this->form_validation->set_rules('project_title', 'Project Title', 'trim|required');
+		$this->form_validation->set_rules('Project_description', 'Project Description', 'trim');
 		if($this->form_validation->run()===false)
 		{
 			$message=$this->html_lib->alert_div(validation_errors());
@@ -114,9 +114,9 @@ class Projects extends CI_Controller {
 	* @return
 	*/
 	public function update_job1(){
-		$this->form_validation->set_rules('project_title', 'Project Title', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('project_description', 'Project Description', 'trim|xss_clean');
-		$this->form_validation->set_rules('project_id', 'Project Id', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('project_title', 'Project Title', 'trim|required');
+		$this->form_validation->set_rules('project_description', 'Project Description', 'trim');
+		$this->form_validation->set_rules('project_id', 'Project Id', 'trim|required');
 		
 		if($this->form_validation->run()===false)
 		{

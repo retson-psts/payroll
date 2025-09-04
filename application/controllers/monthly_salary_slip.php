@@ -8,6 +8,7 @@ class Monthly_salary_slip extends CI_Controller {
 	   $this->load->library(array('form_validation'));
 	  
     }
+
 	public function index()
 	{
 			$user_id=$this->session->userdata['logged_in']['user_id'];
@@ -28,6 +29,20 @@ class Monthly_salary_slip extends CI_Controller {
 			$this->load->view('salary_slip/monthly_salary_slip_view',$data);
 			$this->load->view('footer');
 	}
+	function datevalidate($date, $format = 'Y-m-d')
+    {
+    	    $d = DateTime::createFromFormat($format, $date);
+        	if( $d && $d->format($format) == $date)
+        	{
+    			
+    		}
+    		else
+    		{
+    			$this->form_validation->set_message('datevalidate', 'Not Valid date');
+    			return FALSE;
+    			
+    		}
+    }
 	public function ajax_salary()
 	{
 		if ($this->input->is_ajax_request()) 
@@ -775,32 +790,8 @@ class Monthly_salary_slip extends CI_Controller {
 			// var_dump($insert_final_array[$emp_id]);
 			// var_dump($array_cpf['employee']);
 			// var_dump($insert_final_array[$emp_id]['total_wage1'],'total_wage1',$array_cpf['employee'],'employee',$insert_final_array[$emp_id]['cdac'],'cdac',$insert_final_array[$emp_id]['mbmf'],'mbmf',$insert_final_array[$emp_id]['sinda'],'sinda',$insert_final_array[$emp_id]['ecf'],'ecf',$insert_final_array[$emp_id]['share'],'share',$insert_final_array[$emp_id]['salary_deduction'],'ded');
-			// $net_pay+=$insert_final_array[$emp_id]['total_wage1']-($array_cpf['employee']+$insert_final_array[$emp_id]['cdac']+$insert_final_array[$emp_id]['mbmf']+$insert_final_array[$emp_id]['sinda']+$insert_final_array[$emp_id]['ecf']+$insert_final_array[$emp_id]['share'])-$insert_final_array[$emp_id]['salary_deduction'];
-			// $insert_final_array[$emp_id]['net_pay']=$net_pay;
-
-
-			// Debug information
-			error_log('total_wage1: ' . gettype($insert_final_array[$emp_id]['total_wage1']) . ' = ' . $insert_final_array[$emp_id]['total_wage1']);
-			error_log('cpf_employee: ' . gettype($array_cpf['employee']) . ' = ' . $array_cpf['employee']);
-			error_log('cdac: ' . gettype($insert_final_array[$emp_id]['cdac']) . ' = ' . $insert_final_array[$emp_id]['cdac']);
-			error_log('mbmf: ' . gettype($insert_final_array[$emp_id]['mbmf']) . ' = ' . $insert_final_array[$emp_id]['mbmf']);
-			error_log('sinda: ' . gettype($insert_final_array[$emp_id]['sinda']) . ' = ' . $insert_final_array[$emp_id]['sinda']);
-			error_log('ecf: ' . gettype($insert_final_array[$emp_id]['ecf']) . ' = ' . $insert_final_array[$emp_id]['ecf']);
-			error_log('share: ' . gettype($insert_final_array[$emp_id]['share']) . ' = ' . $insert_final_array[$emp_id]['share']);
-			error_log('salary_deduction: ' . gettype($insert_final_array[$emp_id]['salary_deduction']) . ' = ' . $insert_final_array[$emp_id]['salary_deduction']);
-
-			// Ensure all values are treated as numbers
-			$total_wage1 = (float)$insert_final_array[$emp_id]['total_wage1'];
-			$cpf_employee = (float)$array_cpf['employee'];
-			$cdac = (float)$insert_final_array[$emp_id]['cdac'];
-			$mbmf = (float)$insert_final_array[$emp_id]['mbmf'];
-			$sinda = (float)$insert_final_array[$emp_id]['sinda'];
-			$ecf = (float)$insert_final_array[$emp_id]['ecf'];
-			$share = (float)$insert_final_array[$emp_id]['share'];
-			$salary_deduction = (float)$insert_final_array[$emp_id]['salary_deduction'];
-
-			$net_pay += $total_wage1 - ($cpf_employee + $cdac + $mbmf + $sinda + $ecf + $share) - $salary_deduction;
-			$insert_final_array[$emp_id]['net_pay'] = $net_pay;
+			$net_pay+=$insert_final_array[$emp_id]['total_wage1']-($array_cpf['employee']+$insert_final_array[$emp_id]['cdac']+$insert_final_array[$emp_id]['mbmf']+$insert_final_array[$emp_id]['sinda']+$insert_final_array[$emp_id]['ecf']+$insert_final_array[$emp_id]['share'])-$insert_final_array[$emp_id]['salary_deduction'];
+			$insert_final_array[$emp_id]['net_pay']=$net_pay;
 			
 			$date1=DateTime::createFromFormat('Y-m-d',$month);
 		

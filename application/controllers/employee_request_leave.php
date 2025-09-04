@@ -45,9 +45,9 @@ class Employee_request_leave extends CI_Controller {
 	}
 	public function request_leave_add()
 	{
-		$this->form_validation->set_rules('leave_type', 'Leave Type', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('date_range', 'Date Range', 'trim|required|xss_clean|callback_check_dates');
-		$this->form_validation->set_rules('leave_notes', 'Leave Notes', 'trim|xss_clean');
+		$this->form_validation->set_rules('leave_type', 'Leave Type', 'trim|required');
+		$this->form_validation->set_rules('date_range', 'Date Range', 'trim|required|callback_check_dates');
+		$this->form_validation->set_rules('leave_notes', 'Leave Notes', 'trim');
 		if($this->form_validation->run()!== FALSE)
 		{
 			$leave_type=$this->input->post('leave_type');

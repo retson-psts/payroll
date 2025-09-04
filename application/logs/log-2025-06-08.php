@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-06-08 01:13:21 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-06-08 01:13:21 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-06-08 01:13:21 --> 404 Page Not Found: Git/config
+ERROR - 2025-06-08 01:13:22 --> 404 Page Not Found: Git/config
+ERROR - 2025-06-08 23:11:49 --> 404 Page Not Found: Envsave/index
+ERROR - 2025-06-08 23:11:50 --> 404 Page Not Found: Envprod/index
+ERROR - 2025-06-08 23:11:54 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2025-06-08 23:11:56 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2025-06-08 23:11:57 --> 404 Page Not Found: Envexample/index
+ERROR - 2025-06-08 23:11:58 --> 404 Page Not Found: Admin/.env
+ERROR - 2025-06-08 23:11:59 --> 404 Page Not Found: Info/index
+ERROR - 2025-06-08 23:12:00 --> 404 Page Not Found: Sendgridenv/index
+ERROR - 2025-06-08 23:12:00 --> 404 Page Not Found: Envjs/index
+ERROR - 2025-06-08 23:12:01 --> 404 Page Not Found: Runtime-envjs/index
+ERROR - 2025-06-08 23:12:02 --> 404 Page Not Found: Configjs/index
+ERROR - 2025-06-08 23:12:02 --> 404 Page Not Found: Aws-exportsjs/index
+ERROR - 2025-06-08 23:12:03 --> 404 Page Not Found: Firebase-configjs/index
+ERROR - 2025-06-08 23:12:04 --> 404 Page Not Found: Firebasejs/index
+ERROR - 2025-06-08 23:12:05 --> 404 Page Not Found: Settingsjs/index
+ERROR - 2025-06-08 23:12:05 --> 404 Page Not Found: App-settingsjs/index
+ERROR - 2025-06-08 23:12:06 --> 404 Page Not Found: Configjson/index
+ERROR - 2025-06-08 23:12:08 --> 404 Page Not Found: Credentialsjson/index
+ERROR - 2025-06-08 23:12:10 --> 404 Page Not Found: Secretsjson/index
+ERROR - 2025-06-08 23:12:11 --> 404 Page Not Found: Manifestjson/index
+ERROR - 2025-06-08 23:12:12 --> 404 Page Not Found: Js/env.js
+ERROR - 2025-06-08 23:12:12 --> 404 Page Not Found: Js/config.js
+ERROR - 2025-06-08 23:12:13 --> 404 Page Not Found: Js/settings.js
+ERROR - 2025-06-08 23:12:14 --> 404 Page Not Found: Js/app.js
+ERROR - 2025-06-08 23:12:15 --> 404 Page Not Found: Assets/env.js
+ERROR - 2025-06-08 23:12:16 --> 404 Page Not Found: Assets/config.js
+ERROR - 2025-06-08 23:12:16 --> 404 Page Not Found: Assets/settings.js

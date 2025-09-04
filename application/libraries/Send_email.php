@@ -1,6 +1,6 @@
 <?php 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class BYZERO_Send_email{
+class Send_email{
 	 private $byzero;
 	 private $config;
 	 function __construct()

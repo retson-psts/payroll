@@ -24,8 +24,8 @@ class Job_titles extends CI_Controller {
 	}
 	public function add1() // Edited add=>add1
 	{
-		$this->form_validation->set_rules('job_title', 'Job Title Name', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('job_cat', 'Job Category', 'trim|required|xss_clean|numeric');
+		$this->form_validation->set_rules('job_title', 'Job Title Name', 'trim|required');
+		$this->form_validation->set_rules('job_cat', 'Job Category', 'trim|required|numeric');
 		if($this->form_validation->run()===false)
 		{
 			$message=$this->html_lib->alert_div(validation_errors());
@@ -80,9 +80,9 @@ class Job_titles extends CI_Controller {
 	}
 	public function update_job1() // Edite update_job=>update_job1
 	{
-		$this->form_validation->set_rules('job_title', 'Job Title', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('job_cat', 'Enable Login', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('job_id', 'Category Id', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('job_title', 'Job Title', 'trim|required');
+		$this->form_validation->set_rules('job_cat', 'Enable Login', 'trim|required');
+		$this->form_validation->set_rules('job_id', 'Category Id', 'trim|required');
 		if($this->form_validation->run()===false)
 		{
 			$message=$this->html_lib->alert_div(validation_errors());

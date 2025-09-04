@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+ ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+ error_reporting(E_ALL);
 
 /*
  *---------------------------------------------------------------
@@ -34,7 +34,7 @@ error_reporting(E_ALL);
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
- 
+
  
  if (($_SERVER['SERVER_NAME'] == 'localhost')||($_SERVER['SERVER_NAME'] == '192.168.1.4')) {
     define('ENVIRONMENT', 'development');
@@ -190,7 +190,8 @@ if (defined('ENVIRONMENT'))
 
 	// Name of the "system folder"
 	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
-
+	
+	define('VIEWPATH', $application_folder . '/views/');
 
 	// The path to the "application" folder
 	if (is_dir($application_folder))

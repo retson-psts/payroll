@@ -1,25 +1,38 @@
 <?php
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-class login extends CI_Controller
+class Login extends CI_Controller
 {
     public function __construct()
     {
-        parent::__construct();
+            
+            parent::__construct();   
+          
         $this->load->library(array(
             'form_validation'
         ));
+   
         $this->load->model(array(
             'user'
         ));
+        $this->load->helper('string');
+    }
+
+    public function test()
+    {
+        echo json_encode("aaa1");
+        echo json_encode([]);die;
     }
     public function index()
     {
+       
         if (!isset($this->session->userdata[user_id]))
         {
+           
             $data['username'] = '';
             if (isset($this->session->userdata['form']))
             {
+                
                 $error               = $this->session->userdata['form'];
                 $data['login_error'] = $error['login']['message'];
                 if (isset($error['login']['form_data']['username']))
@@ -32,17 +45,22 @@ class login extends CI_Controller
             $this->load->helper(array(
                 'form'
             ));
-            $this->load->view('login-test', $data);
+            
+            $this->load->view('login_test', $data);
         }
         else
         {
             redirect(site_path . 'home', 'refresh');
         }
+       
+
     }
     public function login_val()
     {
+        
     	if ($this->form_validation->run('login') !== false)
         {
+          
             $data['username']             = $this->input->post('username');
             $contents                     = $this->common_model->__fetch_contents('users', $data);
             $data1['log_entertime']       = date('Y-m-d H:i:s');
@@ -54,11 +72,13 @@ class login extends CI_Controller
             $data1['log_time_of_sec']     = date('Y-m-d H:i:s');
             $data1['log_session_id']      = session_id();
             $data1['log_last_accessed']   = time();
+           
             if ($contents !== false)
             {
                 $pass_old = $contents[0]['password'];
                 if ($pass_old == md5($this->input->post('password')))
                 {
+                    
                     $data['password']    = $this->input->post('password');
                     $data1['log_result'] = 1;
                     $data1['log_user']   = $contents[0]['user_id'];
@@ -83,19 +103,25 @@ class login extends CI_Controller
                             'gender' => $row->gender
                         );
                     }
+                    
                     $this->session->set_userdata('logged_in', $sess_array);
-                    $company_details = $this->common_model->__fetch_contents('company_config', array(), '*');
+                    $company_details = $this->common_model->__fetch_contents('company_config', array(), '*');                  
                     $this->session->set_userdata('company', $company_details[0]);
+                   
                     if (isset($this->session->userdata['url_login']))
-                    {
-                        $url = $this->session->userdata['url_login'];
-                        unset($this->session->userdata['url_login']);
+                    {     
+                           
+                        $url = $this->session->userdata['url_login'];   
+                                              
+                        unset($this->session->userdata['url_login']);                      
                         redirect(site_path . $url, 'refresh');
                     }
                     else
-                    {
+                    {       
+                                     
                         redirect(site_path, 'refresh');
                     }
+                   
                 }
                 else
                 {
@@ -110,7 +136,7 @@ class login extends CI_Controller
                     $this->session->set_userdata('form', array(
                         'login' => $report
                     ));
-                    redirect(site_path . 'login', 'refresh');
+                    redirect(site_path . 'Login', 'refresh');
                 }
             }
             else
@@ -131,17 +157,22 @@ class login extends CI_Controller
         }
         else
         {
+          
             $data1['log_password'] = $this->input->post('user_password');
+           
             $last_id               = $this->common_model->insert_table_lastid('failure_log', $data1);
+           
             $message               = validation_errors();
             $report                = array(
                 'status' => 0,
                 'form_data' => $this->input->post(),
                 'message' => $message
             );
+            
             $this->session->set_userdata('form', array(
                 'login' => $report
             ));
+          
             redirect(site_path . 'login', 'refresh');
         }
     }

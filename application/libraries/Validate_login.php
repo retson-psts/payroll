@@ -11,7 +11,7 @@ class Validate_login {
    
    public function login_not_using_pages()
    {
-   	$array=array('login');
+   	$array=array('login','ApiDataController');
    	return $array;
    }
    

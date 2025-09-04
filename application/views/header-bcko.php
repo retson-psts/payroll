@@ -34,12 +34,12 @@ $user_info=$this->session->userdata['logged_in'];
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
          <!-- jQuery 2.0.2 -->
-         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-         <link href="http://demo.smarttutorials.net/jquery-autocomplete/css/jquery-ui-1.10.3.custom.min.css" type="text/css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+         <link href="https://demo.smarttutorials.net/jquery-autocomplete/css/jquery-ui-1.10.3.custom.min.css" type="text/css">
         
-        <script src="http://demo.smarttutorials.net/jquery-autocomplete/js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="https://demo.smarttutorials.net/jquery-autocomplete/js/jquery-ui-1.10.3.custom.min.js"></script>
                 <!-- jQuery 2.0.2 -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
         <script src="<?php echo  js_path?>jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->

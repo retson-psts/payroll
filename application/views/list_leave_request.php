@@ -59,6 +59,7 @@
 													  $from=date_create($leave_req->leave_request_from);
 													  $to=date_create($leave_req->leave_request_to);
 													  $total_days=date_diff($from,$to);
+                                                      
 													  echo '<tr>
 															  <td>'.$i.'</td>
 															  <td>'.$leave_req->emp_firstname.'</td>

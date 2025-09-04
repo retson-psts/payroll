@@ -32,7 +32,7 @@ class Employee_jobsheet extends CI_Controller {
 	{
 		
 		$user_id=$this->session->userdata['logged_in']['user_id'];
-		$this->form_validation->set_rules('jobsheet_date', 'Date Jobsheet', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('jobsheet_date', 'Date Jobsheet', 'trim|required');
 		
 		if($this->form_validation->run()===false)
 		{
@@ -46,7 +46,6 @@ class Employee_jobsheet extends CI_Controller {
 		{
 			
 			$date=$this->input->post('jobsheet_date');
-// 			var_dump($date);die;
 			$date_follow=$date;
 			$date1=explode('-',$date);
 			if(count($date1)==3 && checkdate($date1['1'],$date1['2'],$date1['0']))
@@ -74,11 +73,13 @@ class Employee_jobsheet extends CI_Controller {
 						$data['user_details']=$this->users_lib->get_logged_user_details($user_id);
 						$data['message_div']='';
 						$data['project_list']=$this->projects_model->list_projects();
-						$data['total_list1']=$this->jobsheet_model->job_sheet_list_employee($user_id,$date);
+						
+						$data['total_list1']=$this->jobsheet_model->job_sheet_list_employee($user_id,$date_follow);
 						$data['status']=2;
 						$data['date']=$date1['2'].'-'.$date1['1'].'-'.$date1['0'];
 						$data['dateold']=$this->input->post('jobsheet_date');
 						$data['total_list']=$this->fetch_jobsheet_leave($data['total_list1'],$data['dateold']);
+						
 						$data['leave_request_types']=$this->leave_lib->leave_request_types();
 						$data['pay_periods']=$this->job_model->pay_period();
 						$data['project_list']=$this->jobsheet_model->project_list();
@@ -123,13 +124,10 @@ class Employee_jobsheet extends CI_Controller {
 	}
 	public function location_list()
 	{
-		
-		
-		$this->form_validation->set_rules('id', 'id', 'trim|required|xss_clean|numeric');
+		$this->form_validation->set_rules('id', 'id', 'trim|required|numeric');
 		$id=$this->input->get('id');
 		$data['location_list']=$this->jobsheet_model->location_list($id);
-		$this->load->view('location_list_ajax',$data);
-		
+		$this->load->view('location_list_ajax',$data);	
 		
 	}
 	public function absent()
@@ -237,6 +235,7 @@ class Employee_jobsheet extends CI_Controller {
 		
 	public function jobsheet_complete()
 	{
+		
 		if ($this->input->is_ajax_request()) {
 		$user_id=$this->session->userdata['logged_in']['user_id'];
 		$data=$this->input->post();
@@ -362,6 +361,7 @@ class Employee_jobsheet extends CI_Controller {
 		
 		$leave_array=array();
 		$job_array=array();
+	if($employee_array){
 	   foreach($employee_array as $key=>$item)
 	   {
 		   	$data_leave=array('employee_id'=>$item['employee_id'],'leave_date'=>$leave_date,'leave_request'=>1);
@@ -369,6 +369,7 @@ class Employee_jobsheet extends CI_Controller {
 		   	$employee_array[$key]['leave']=$this->common_model->fetch_contents('employee_leave',$data_leave); 
 		   	$employee_array[$key]['jobsheet']=$this->jobsheet_model->jobsheet_data($data_jobsheet); 
 	   }	
+	}
 	  return $employee_array;
 	}
 	

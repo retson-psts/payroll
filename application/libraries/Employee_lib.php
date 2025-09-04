@@ -7,7 +7,7 @@ class Employee_lib
 	 $this->byzero = & get_instance();
 	 $this->byzero->load->model('employee_model');
    }
-   public function add_employee($step='1',$data='',$id='0')
+   public function add_employee($step,$data,$id='0')
    {
 	   if($step=='1')
 	   {
@@ -20,7 +20,7 @@ class Employee_lib
 		   return $add_step2;
 	   }
    }
-   public function edit_employee($step='1',$data='',$id='0')
+   public function edit_employee($step,$data,$id='0')
    {
 	   if($step=='1')
 	   {

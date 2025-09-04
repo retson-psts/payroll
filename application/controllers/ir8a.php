@@ -233,7 +233,7 @@ class Ir8a extends CI_Controller {
 			$year=$data['year'];
 			$emp_id=$data['emp_id'];
 			$this->load->model('salary_model');
-			$data['authorised']=$this->common_model->__fetch_contents('ir8a_authorised',array(),'*','ir8a_authorised_id desc');
+			$data['authorised']=$this->common_model->__fetch_contents('ir8a_authorised',array(),'*','','ir8a_authorised_id desc');
 			$data['res']=$this->salary_model->ir8a($year,$emp_id);
 			$data['message_div']='';
 			$this->load->view('pdf/ir8_pdf',$data);

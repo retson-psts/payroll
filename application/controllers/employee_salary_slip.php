@@ -55,7 +55,7 @@ class Employee_salary_slip extends CI_Controller {
 	
     private function custom_encrypt($array,$column)
     {
-    //	$this->load->library('encrypt');
+    	$this->load->library('encrypt');
     	//var_dump($array);
     	
 		foreach($array as $key => $value){

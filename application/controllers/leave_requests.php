@@ -152,8 +152,8 @@ class Leave_Requests extends CI_Controller
 	}
     /*public function process_request()
     {
-        $this->form_validation->set_rules('request_id', 'Invalid Request', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('leave_request_approve_notes', 'Leave Request Notes', 'trim|xss_clean');
+        $this->form_validation->set_rules('request_id', 'Invalid Request', 'trim|required');
+        $this->form_validation->set_rules('leave_request_approve_notes', 'Leave Request Notes', 'trim');
         if ($this->form_validation->run() !== false)
         {
             if (isset($_POST['approve']))

@@ -14,7 +14,8 @@ class List_employee extends CI_Controller {
 	  $data['user_details']=$this->users_lib->get_logged_user_details($user_id);
 	  $employees=$this->employee_model->list_employees1();
 	  $data['employees_list']=$this->calculate_percent($employees);
-	  //var_dump($data['employees_list']);
+
+	//   var_dump($data['employees_list']);die;
 	  $data['page_title']="List Employees";
 	  $this->load->view('header',$data);
 	  $this->load->view('side_menu_admin',$data);

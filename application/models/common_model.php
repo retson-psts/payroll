@@ -78,9 +78,7 @@ Class Common_model extends CI_Model
 		//var_dump($this->db->last_query());
 	    if($query -> num_rows())
 	    {
-	   	  return $query->result_array();
-		 
-		 
+	   	  return $query->result_array();		 
 	    }
 	    else
 	    {
@@ -107,9 +105,10 @@ Class Common_model extends CI_Model
 
 	public function update_table($table_name,$data,$id)
 	{
+		
 		$this->db->where($table_name.'_id',$id);
 		$this->db->update($table_name,$data);
-		if($this->db->_error_message())
+		if($this->db->error()["message"])
 		{
 			return false;
 		}
@@ -121,7 +120,7 @@ Class Common_model extends CI_Model
 		$this->db->where($where_data);
 		$this->db->update($table_name,$data);
 		
-		if($this->db->_error_message())
+		if($this->db->error())
 		{
 			return false;
 		}
@@ -211,7 +210,9 @@ Class Common_model extends CI_Model
 
 	public function insert_table_lastid($table_name,$data)
 	{
+		
 		$this->db->insert($table_name,$data);
+	
 		return $this->db->insert_id();
 		
 	}
@@ -333,6 +334,7 @@ Class Common_model extends CI_Model
 	*/
 	public function insert_multiple($table_name,$array)
 	{
+		
 		$this->db->trans_begin();
 		$this->db->insert_batch($table_name,$array);
 		if ($this->db->trans_status() === FALSE)
@@ -342,6 +344,7 @@ Class Common_model extends CI_Model
 		}
 		else
 		{
+			
 			if($this->db->trans_commit())
 			{
 				return true;

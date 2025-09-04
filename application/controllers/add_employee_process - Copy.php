@@ -32,8 +32,8 @@ class Add_employee_process extends CI_Controller {
 			{
 				if($this->input->post('enable_login')=='1')
 				{
-					$this->form_validation->set_rules('username', 'Username', 'trim|xss_clean|is_unique(users.username)|required;');
-					$this->form_validation->set_rules('password', 'Password', 'trim|xss_clean|required;');
+					$this->form_validation->set_rules('username', 'Username', 'trim|is_unique(users.username)|required;');
+					$this->form_validation->set_rules('password', 'Password', 'trim|required;');
 					  $username=$this->input->post('username');
 					  $password=$this->input->post('password');
 					  if($this->form_validation->run($step1)!==false)
@@ -891,9 +891,9 @@ class Add_employee_process extends CI_Controller {
 	}
 	public function upload_attachment($employee_id='0')
 	{
-		$this->form_validation->set_rules('screen', 'Attachment Type', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('screen', 'Attachment Type', 'trim|required');
 		$this->form_validation->set_rules('attach_file', 'Employee Id', 'trim');
-		$this->form_validation->set_rules('attach_comment', 'Employee Id', 'trim|xss_clean');
+		$this->form_validation->set_rules('attach_comment', 'Employee Id', 'trim');
 		if($this->form_validation->run()!==false)
 		{
 			if($_FILES['attach_file']['name']!='')
@@ -935,7 +935,7 @@ class Add_employee_process extends CI_Controller {
 	public function add_photo()
 	{
 		$this->form_validation->set_rules('employee_photo', 'Employee Photo', 'strip_image_tags|trim');
-		$this->form_validation->set_rules('employee_id', 'Employee Id', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('employee_id', 'Employee Id', 'trim|required');
 		if($this->form_validation->run()!==false)
 		{
 			if($_FILES['employee_photo']['name']!='')

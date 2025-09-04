@@ -1,8 +1,8 @@
 <?php try
 {
-$db['default']['username'] = 'ps';
-$db['default']['password'] = 'csi@12345';
-$db['default']['database'] = 'fees_management1';
+$db['default']['username'] = 'aananzhg_payroll_mobile_backend';
+$db['default']['password'] = 'wL)o?3c5Z545';
+$db['default']['database'] = 'aananzhg_payroll_mobile_backend';
 $serverName="115.42.175.118,1433";//
 $conn = new PDO( "sqlsrv:server=$serverName ; Database=QR_TEST", "qrcodetest", "abqRc0de");
 $name = 'NAMESER_'.time();

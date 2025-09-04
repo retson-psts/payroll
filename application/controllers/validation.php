@@ -8,6 +8,11 @@ class Validation extends CI_Controller
     parent::__construct();
     $this->load->library(array('form_validation','employee_lib'));
     $this->load->model(array('employee_model','job_model'));
+	if(isset($_POST['ci_csrf_token']))
+	{
+		unset($_POST['ci_csrf_token']);
+	}
+
   }
   /**
   * Validate field and insert via ajax step1

@@ -15,7 +15,7 @@ $company=$this->session->userdata['company'];
         <link href="<?php echo  css_path?>bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
         <link href="<?php echo  css_path?>font-awesome.css" rel="stylesheet" type="text/css" />
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
         <!-- Ionicons -->
         <?php /*?><link href="<?php echo  css_path?>onicons.min.css" rel="stylesheet" type="text/css" /><?php */?>
          <!-- bootstrap wysihtml5 - text editor -->

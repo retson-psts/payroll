@@ -54,7 +54,7 @@
         </form>
     	<div class="copy-right text-center">
     	<p>HR & payroll management system <br>
-    	<!--© 2015 <a href="http://www.dreamwerkztechnologies.com/" class="comp"> DWZ </a>, Inc. All rights reserved.<br>--></p>
+    	<!--ï¿½ 2015 <a href="http://www.dreamwerkztechnologies.com/" class="comp"> DWZ </a>, Inc. All rights reserved.<br>--></p>
     	<div class="text-center" >
     	<!--<a href="https://www.facebook.com/pages/Dreamwerkz-Technologies/765732066846766"><i class="social fb"></i></a>
     	<a href="https://plus.google.com/100858742625179614554/videos"><i class="social gp"></i></a>
@@ -88,7 +88,7 @@
 </form>
 </div><!-- /.modal -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo js_path; ?>bootstrap.min.js"></script>
     <script>

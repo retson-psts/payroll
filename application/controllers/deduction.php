@@ -52,10 +52,10 @@ class Deduction extends CI_Controller {
 		if ($this->input->is_ajax_request())
    		{
    			$this->load->library('form_validation');
-   			$this->form_validation->set_rules('salary_month', 'Month', 'trim|xss_clean|required|datevalidate[Y-m]');
-	    	$this->form_validation->set_rules('employee_id', 'Employee', 'trim|xss_clean|required|numeric');
-	    	$this->form_validation->set_rules('sld_dec_id', 'Category', 'trim|xss_clean|numeric');
-	    	$this->form_validation->set_rules('date_given', 'Given Date', 'trim|xss_clean|numeric|datevalidate[Y-m-d]');
+   			$this->form_validation->set_rules('salary_month', 'Month', 'trim|required|datevalidate[Y-m]');
+	    	$this->form_validation->set_rules('employee_id', 'Employee', 'trim|required|numeric');
+	    	$this->form_validation->set_rules('sld_dec_id', 'Category', 'trim|numeric');
+	    	$this->form_validation->set_rules('date_given', 'Given Date', 'trim|numeric|datevalidate[Y-m-d]');
    			if ($this->form_validation->run() !== false)
             {
 		   		
@@ -98,11 +98,11 @@ class Deduction extends CI_Controller {
 		if ($this->input->is_ajax_request())
    		{
    			$this->load->library('form_validation');
-   			$this->form_validation->set_rules('salary_month', 'Month', 'trim|xss_clean|required|datevalidate[Y-m]');
-	    	$this->form_validation->set_rules('employee_id', 'Employee', 'trim|xss_clean|required|numeric');
-	    	$this->form_validation->set_rules('sld_dec_id', 'Category', 'trim|xss_clean|numeric|required');
-	    	$this->form_validation->set_rules('sld_amount', 'Amount', 'trim|xss_clean|numeric|required|callback_totalsal');
-	    	$this->form_validation->set_rules('date_given', 'Given Date', 'trim|xss_clean|numeric|datevalidate[Y-m-d]');
+   			$this->form_validation->set_rules('salary_month', 'Month', 'trim|required|datevalidate[Y-m]');
+	    	$this->form_validation->set_rules('employee_id', 'Employee', 'trim|required|numeric');
+	    	$this->form_validation->set_rules('sld_dec_id', 'Category', 'trim|numeric|required');
+	    	$this->form_validation->set_rules('sld_amount', 'Amount', 'trim|numeric|required|callback_totalsal');
+	    	$this->form_validation->set_rules('date_given', 'Given Date', 'trim|numeric|datevalidate[Y-m-d]');
    			if ($this->form_validation->run() !== false)
             {
 		   	$data=$this->input->post(NULL,TRUE);
@@ -172,9 +172,9 @@ class Deduction extends CI_Controller {
    		{
    			
    			/*$this->load->library('form_validation');
-   			$this->form_validation->set_rules('salary_month', 'Month', 'trim|xss_clean|datevalidate[Y-m]');
-	    	$this->form_validation->set_rules('employee_id', 'Employee', 'trim|xss_clean|numeric');
-	    	$this->form_validation->set_rules('sld_dec_id', 'Category', 'trim|xss_clean|numeric');
+   			$this->form_validation->set_rules('salary_month', 'Month', 'trim|datevalidate[Y-m]');
+	    	$this->form_validation->set_rules('employee_id', 'Employee', 'trim|numeric');
+	    	$this->form_validation->set_rules('sld_dec_id', 'Category', 'trim|numeric');
 	    	if ($this->form_validation->run() !== false)
             {*/
 		   	$data=$this->input->get(NULL,TRUE);
