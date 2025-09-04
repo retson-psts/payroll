@@ -1148,7 +1148,7 @@ class Validation extends CI_Controller
                         $ext = $this->getExtension($name);
                         if (in_array($ext, $valid_formats))
                         {
-                            if ($size < (1024 * 1024))
+							if ($size <= (2 * 1024 * 1024))
                             {
                                 $actual_image_name = time() . substr(str_replace(" ", "_", $txt), 0) . "." . $ext;
                                 $tmp               = $file['tmp_name'];
@@ -1166,7 +1166,7 @@ class Validation extends CI_Controller
                             else
                             {
                                 $error = true;
-                                $msg1  = "Size Exceeded than 1 mb";
+                                $msg1  = "Size Exceeded than 2 mb";
                             }
                         }
                         else

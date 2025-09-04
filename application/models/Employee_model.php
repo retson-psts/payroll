@@ -244,13 +244,15 @@ Class Employee_model extends CI_Model
 	}
 	public function employee_photo($id)
 	{
-		$this->db->select('*');
-		$this->db->from('employee_media');
-		$this->db->where('employee_id',$id);
-		$this->db->where('screen','emp_photo');
-		$this->db->order_by('emp_attach_id','DESC');
-		$this->db->limit('1');
-		$query = $this -> db -> get();
+		$this->db->select('em.*, u.gender');
+		$this->db->from('employee_media as em');
+		$this->db->join('users as u', 'em.employee_id = u.employee_id', 'LEFT');
+		$this->db->where('em.employee_id', $id);
+		$this->db->where('em.screen', 'emp_photo');
+		$this->db->order_by('em.emp_attach_id', 'DESC');
+		$this->db->limit(1);
+		$query = $this->db->get();
+		
 	    if($query -> num_rows() == 1)
 	    {
 		  return $query->result();

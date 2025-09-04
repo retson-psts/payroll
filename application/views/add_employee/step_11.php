@@ -30,10 +30,16 @@
                                     <div class="employee_photo">
                                     
                                     	<?php
-                                    		
-											if($employee_photo=='')
+                                    		if(isset($employee_photo) && !$employee_photo['0']->eattach_filename)
 											{
-												$photo='boy.png';
+                                                if(in_array($employee_photo['0']->gender, ['male', 1]))
+                                                {
+                                                    $photo = 'boy.png';
+                                                }
+                                                else
+                                                {
+                                                    $photo = 'girl.png';
+                                                }
 											}
 											else
 											{

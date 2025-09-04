@@ -19,6 +19,7 @@
                     <div class="row">
                         
                              <div class="box box-primary">
+                                <?php if(isset($bank_details['0'])): ?>
                                 <div class="box-body">
                                 	<div class="col-sm-9 border" style="margin: 0 auto; float: none;">
                                 		<h4><?php echo $bank_details['0']['bank_name']; ?><a  href="#"  data-toggle="modal" data-target="#myModal">
@@ -48,6 +49,15 @@
                                 	
                                 	
                                 </div>
+                                <?php else: ?>
+                                <div class="box-body">
+                                    <div class="col-sm-9 border" style="margin: 0 auto; float: none;">
+                                        <hr style="margin:0;border-width: 1px 0px 0px;border-style: solid none none;border-color: #535353 -moz-use-text-color ">
+                                        <h5>Bank Details </h5>
+                                        <p>No Results Found</p>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
                                 <!-- /.box-body -->
                             </div><!-- /.box -->
                      </div>
@@ -57,6 +67,7 @@
         
 
 <!-- Modal -->
+<?php if(isset($bank_details['0'])): ?>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
   <form action="" method="POST" id="bank_details" enctype="multipart/form-data">
@@ -120,6 +131,7 @@
 </form>
   </div>
 </div>
+<?php endif; ?>
 		<style>h5, .h5 {
     font-size: 15px;
     font-weight: 800;

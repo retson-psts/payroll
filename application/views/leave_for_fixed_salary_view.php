@@ -32,7 +32,7 @@
                                 <input type="hidden" name="<?php echo  $this->security->get_csrf_token_name(); ?>" id="csrf_token" value="<?php echo  $this->security->get_csrf_hash(); ?>"/>
                                     <div class="box-body" >
                                     	<!--<div class="alert alert-info alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>
                     <h4><i class="icon fa fa-info"></i> Notification</h4>
                     Please Change Weekly holidays in listing dates.
                   </div>-->
@@ -183,7 +183,7 @@
 				$(function() {
 					//Date range picker
 					$('#reservation').daterangepicker({format: 'YYYY/MM/DD',       
-					 minDate: '<?php echo date("Y-m-d"); ?>',
+					 minDate: '<?php echo date('Y-m-d', strtotime('first day of previous month')); ?>',
        				});
 					$('#leave_type').change(function(){
 						var id=$('#leave_type').val();
@@ -218,7 +218,7 @@
 											txt+='<p>'+v+'</p>';
 											});*/
 											$('#leave_type').val("");
-											$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'+data.message+'</div>');
+											$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>'+data.message+'</div>');
 									}
 									else if(data.status==1)
 									{ 
@@ -268,7 +268,7 @@
 					            {
 					            	if(data.status==0)
 					            	{
-										$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'+data.message+'</div>');
+										$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>'+data.message+'</div>');
 									}
 									else
 									{
@@ -302,7 +302,7 @@
 						if(html.status==0)
 						{
 							window.scrollTo(0, 0);
-							$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'+html.message+'</div>');
+							$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>'+html.message+'</div>');
 							window.location="<?php echo site_path; ?>leave_requests";
 						}
 						else if(html.status==1)
@@ -319,7 +319,7 @@
 							$.each(date, function(k, v) {
 								txt+='<p>'+v+'</p>';
 								});
-								$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'+txt+'</div>');
+								$('#error').html('<div class="alert alert-danger alert-dismissable"><i class="fa fa-ban"></i> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>'+txt+'</div>');
 							
 						}
 							

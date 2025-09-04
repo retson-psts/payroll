@@ -168,6 +168,7 @@
                                                       <option <?php if($form_data['emp_marital_status']==3){ echo "selected='selected'"; } ?> value="3">Divorced</option>
                                                       <option <?php if($form_data['emp_marital_status']==4){ echo "selected='selected'"; } ?> value="4">Widow</option>
                                                       <option <?php if($form_data['emp_marital_status']==5){ echo "selected='selected'"; } ?> value="5">Widower</option>
+                                                      <option <?php if ($form_data['emp_marital_status'] == 5) { echo "selected='selected'"; } ?> value="6">Not to Disclose</option>
                                                   </select>
                                               </div>
                                               <div class="form-group col-md-4">

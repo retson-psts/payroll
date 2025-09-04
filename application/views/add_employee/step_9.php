@@ -311,7 +311,7 @@
                                             <div class="form-group col-md-4">
                                                <label for="attach_file">Select File *</label>
                                                <input type="file"  required="" name="attach_file" id="attach_file" class="form-control"/>
-                                               <p class="help-block">File should be jpeg,gif, pdf, png, doc, docx or excel format (file size not more than 1 MB)</p>
+                                               <p class="help-block">File should be jpeg,gif, pdf, png, doc, docx or excel format (file size not more than 2 MB)</p>
                                             </div>
                                             <div class="clearfix"></div>
                                             <div class="form-group col-md-4">

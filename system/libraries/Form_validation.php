@@ -1054,9 +1054,9 @@ class CI_Form_validation {
 	 */
 	public function required($str)
 	{
+		//Yuvi-Note
 		return is_array($str)
-			? (empty($str) === FALSE)
-			: (trim($str) !== '');
+			? (empty($str) === FALSE):(trim((string)$str) !== '');
 	}
 
 	// --------------------------------------------------------------------

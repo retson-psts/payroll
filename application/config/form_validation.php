@@ -185,12 +185,12 @@ $config = array(
         array(
             'field' => 'emp_hm_telephone',
             'label' => 'Home Phone',
-            'rules' => 'required|trim|numeric'
+            'rules' => 'trim|numeric'
         ),
         array(
             'field' => 'emp_mobile',
             'label' => 'Mobile',
-            'rules' => 'trim|numeric'
+            'rules' => 'required|trim|numeric'
         ),
         array(
             'field' => 'emp_work_telephone',
@@ -323,7 +323,7 @@ $config = array(
         array(
             'field' => 'ep_provience',
             'label' => 'Place Provided',
-            'rules' => 'required|trim'
+            'rules' => 'trim'
         )
     ),
     'add_employee_step6' => array(
@@ -1478,12 +1478,12 @@ $config = array(
 		        array(
 		            'field' => 'month',
 		            'label' => 'Month',
-		            'rules' => 'trim|required|callback_datevalidate[Y-m]'
+		            'rules' => 'trim|callback_datevalidate[Y-m]' //Yuvi-Note
 		        ),
 		        array(
 		            'field' => 'start_date',
 		            'label' => 'Start Date',
-		            'rules' => 'trim|datevalidate[Y-m-d]|callback_dateconfirm'
+		            'rules' => 'trim|datevalidate[Y-m-d]'
 		        )
 			)
 );

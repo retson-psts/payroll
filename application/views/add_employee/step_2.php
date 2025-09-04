@@ -47,11 +47,11 @@
                                           <h4 class="box-title">Employee's Contact Details (Step 2)</h4>
                                          </div>  
                                         <div class="form-group col-md-4">
-                                            <label for="emp_hm_telephone">Home Phone *</label>
+                                            <label for="emp_hm_telephone">Home Phone</label>
                                             <input type="text" class="form-control" name="emp_hm_telephone" id="emp_hm_telephone" value="<?php echo  $form_data['emp_hm_telephone'] ?>">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="em p_mobile">Mobile Phone</label>
+                                            <label for="em p_mobile">Mobile Phone *</label>
                                             <input type="text" class="form-control" name="emp_mobile" id="emp_mobile" value="<?php echo  $form_data['emp_mobile'] ?>">
                                         </div>
                                         <div class="form-group col-md-4">
