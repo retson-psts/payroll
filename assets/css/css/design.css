@@ -1,0 +1,121 @@
+body 
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    font: 12pt "Tahoma";
+}
+.page 
+{
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 10mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.subpage 
+{    
+    border: 0px #fff solid;
+    height: 257mm;
+    /*outline: 2cm #fff solid;*/
+    outline: 0cm #fff solid;
+}
+
+/*@page 
+{
+    size: A4;
+    margin: 0;
+}*/
+@media print 
+{
+    html, body 
+    {
+        width: 210mm;
+        height: 297mm;        
+    }
+    .page 
+    {
+        margin: 0;        
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;        
+        page-break-after: always;
+    }
+}
+
+.page_tp_box
+{
+	border:1px solid #333;
+	margin:15px 0;
+}
+
+.page_tp_box h5
+{	
+   	font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    margin: 10px;
+    font-style: oblique;
+}
+.page_tp_box h6
+{	
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: #333;    
+    margin: 5px;
+	font-style: oblique;
+    line-height: 30px;
+}
+
+
+/*table style starts*/
+
+.set_tb_spc
+{
+	margin:10px 0;
+	width: 100%;	
+} 
+.set_tb_spc tr
+{
+	height: 39px;
+}
+.tbl_head_txt
+{
+	font-size: 19px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+    margin: 10px 0;    
+}
+.amt_text
+{
+	font-size: 16px;
+    font-weight: 600;
+    text-align: right;
+    color: #333;  
+    border-bottom: 1px solid #000;
+    min-width: 150px;
+    display: block;
+    padding: 3px 7px;
+}
+.border_box
+{
+    border: 1px solid #000;	
+}
+.text_right
+{
+	text-align: right!important;
+}
+
+/*table style end*/
+
+
+
+

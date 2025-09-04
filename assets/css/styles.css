@@ -1,0 +1,35 @@
+.company_logo {
+  width: 80%;
+  margin: 0 auto;
+}
+.company_name {
+ font-size: 23px;
+  color: #444444;
+  margin-top: 8px;
+  margin-left: 30px;
+  width: 50%;
+  float: left;
+  font-weight: 400;
+  font-family: "Lato",sans-serif;
+  text-transform: uppercase;
+}
+img.profile_img {
+  width: 100%;
+}
+.full {
+  padding: 0;
+  margin-right: 5px;
+}
+.user_menus.vertical-tabs{color: #fff;background: #3C8DBC;}
+.user_menus.vertical-tabs a{color: #fff;border: 1px solid #ddd;}
+.user_menus.vertical-tabs li,.user_menus.vertical-tabs li a { width:100%;  border-radius: 0; }
+.nav-tabs>li>a:hover{background-color: #353638!important; color:#fff!important;}
+.employee_photo {
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-bottom: 0;
+}
+.box.box-primary {
+  display: table;
+/*  padding-top: 10px; */
+}
