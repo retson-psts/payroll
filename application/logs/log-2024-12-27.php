@@ -1,0 +1,34 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-12-27 20:32:17 --> 404 Page Not Found: Admin/.env
+ERROR - 2024-12-27 20:32:17 --> 404 Page Not Found: Envdist/index
+ERROR - 2024-12-27 20:32:17 --> 404 Page Not Found: Api/shared
+ERROR - 2024-12-27 20:32:17 --> 404 Page Not Found: Api/shared
+ERROR - 2024-12-27 20:32:17 --> 404 Page Not Found: Configenv/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Api/config.env
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envdevlocal/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envdevelopmentlocal/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envprodlocal/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envproductionlocal/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envlocal/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envexample/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envstage/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envlive/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Env_1/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Env_sample/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envprivate/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envtemplate/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envoverride/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envtest/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envstaging/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envexamplelocal/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envsettings/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envconfig/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envsecure/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envtemplate/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envproduction/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envdevelopment/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envprod/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Envsave/index
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: Aws/credentials
+ERROR - 2024-12-27 20:32:18 --> 404 Page Not Found: App/etc
